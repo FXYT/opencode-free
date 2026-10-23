@@ -1,0 +1,48 @@
+{
+  "name": "opencode-free",
+  "version": "0.1.0",
+  "description": "Standalone client for OpenCode Console free models — keyless, zero runtime dependencies. Unofficial; not affiliated with OpenCode.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test --import tsx test/*.test.ts",
+    "test:live": "OPENCODE_FREE_LIVE=1 node --import tsx --test test/live.test.ts"
+  },
+  "keywords": [
+    "opencode",
+    "free",
+    "llm",
+    "chat",
+    "streaming",
+    "coding-agent",
+    "cli"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FXYT/opencode-free.git"
+  }
+}

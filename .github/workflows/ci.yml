@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["18", "20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test
+      # NOTE: the live gateway test is opt-in (OPENCODE_FREE_LIVE=1) and is
+      # deliberately NOT run in CI — tests must not depend on a third-party
+      # network. Run `npm run test:live` locally before a release.
