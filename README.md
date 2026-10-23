@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/media/banner.png" alt="opencode-free banner" width="100%"/>
+  <img src="docs/banner.png" alt="opencode-free banner" width="100%"/>
 </div>
 
 # opencode-free
