@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="docs/media/banner.png" alt="opencode-free banner" width="100%"/>
+</div>
+
 # opencode-free
 
 **Standalone, keyless client for OpenCode Console free models.**
